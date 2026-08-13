@@ -11,7 +11,7 @@ public class ConfigManager {
     }
 
     static {
-        env = System.getProperty("env");
+        env = System.getProperty("env","qa");
         switch (env){
             case "dev":{
                 path = "config/config.dev.properties";
@@ -25,6 +25,8 @@ public class ConfigManager {
                 path = "config/config.uat.properties";
                 break;
             }
+            default:
+                path = "config/config.qa.properties";
         }
 
         InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
@@ -33,10 +35,8 @@ public class ConfigManager {
         }
         try {
             properties.load(input);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Failed to load config file: "+path,e);
         }
     }
     public static String getProperty(String key){
