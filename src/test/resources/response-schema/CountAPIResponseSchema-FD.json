@@ -1,0 +1,20 @@
+{
+  "message": "Success",
+  "data": [
+    {
+      "label": "Pending for delivery",
+      "key": "pending_for_delivery",
+      "count": 1
+    },
+    {
+      "label": "Created today",
+      "key": "created_today",
+      "count": 463
+    },
+    {
+      "label": "Pending for FST assignment",
+      "key": "pending_fst_assignment",
+      "count": 0
+    }
+  ]
+}
