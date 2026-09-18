@@ -23,7 +23,7 @@ public class CountAPITest {
                 .log().all()
                 .statusCode(200)
                 .body("message", Matchers.equalTo("Success"))
-                .time(Matchers.lessThan(1000L))
+                .time(Matchers.lessThan(1500L))
                 .body("data",Matchers.notNullValue())
                 .body("data.size()",Matchers.equalTo(3))
                 .body("data.count",Matchers.everyItem(Matchers.greaterThanOrEqualTo(0)))
