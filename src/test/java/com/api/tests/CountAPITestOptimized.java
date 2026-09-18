@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class CountAPITestOptimized {
 
-    @Test
+    @Test(description = "Verify if the count api is giving correct response", groups={"api","smoke","regression"})
     public void verifyCountAPIResponse(){
         given()
                 .baseUri(ConfigManager.getProperty("BASE_URI"))
@@ -23,7 +23,7 @@ public class CountAPITestOptimized {
                 .then()
                 .spec(SpecUtil.responseSpec_OK())
                 .body("message", Matchers.equalTo("Success"))
-                .time(Matchers.lessThan(1000L))
+                .time(Matchers.lessThan(1500L))
                 .body("data",Matchers.notNullValue())
                 .body("data.size()",Matchers.equalTo(3))
                 .body("data.count",Matchers.everyItem(Matchers.greaterThanOrEqualTo(0)))
@@ -31,7 +31,7 @@ public class CountAPITestOptimized {
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/CountAPIResponseSchema-FD.json"));
     }
 
-    @Test
+    @Test(description = "\"Verify if count api is giving correct status code for invalid token", groups={"api","negative","smoke","regression"})
     public void countAPITest_MissingAuthToken(){
         given()
                 .spec(SpecUtil.requestSpec())

@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 
 public class MasterAPITestOptimized {
 
-    @Test
+    @Test(description = "Verify if the master api is giving correct response", groups={"api","smoke","regression"})
     public void masterAPITest(){
         RestAssured.given()
                 .spec(SpecUtil.requestSpecWithAuth(Role.FD))
@@ -33,7 +33,7 @@ public class MasterAPITestOptimized {
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/MasterAPIResponseSchema.json"));
     }
 
-    @Test
+    @Test(description = "Verify if master api is giving correct status code for invalid token", groups={"api","negative","smoke","regression"})
     public void invalidTokenMasterAPITest(){
         RestAssured.given()
                 .spec(SpecUtil.requestSpec())

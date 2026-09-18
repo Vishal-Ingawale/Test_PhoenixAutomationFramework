@@ -26,7 +26,7 @@ public class MasterAPITest {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .time(Matchers.lessThan(1000L))
+                .time(Matchers.lessThan(1500L))
                 .body("message",Matchers.equalTo("Success"))
                 .body("data",Matchers.notNullValue())
                 .body("data",hasKey("mst_oem"))

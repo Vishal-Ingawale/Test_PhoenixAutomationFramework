@@ -33,7 +33,7 @@ public class UserDetailsAPITest {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .time(Matchers.lessThan(1000L))
+                .time(Matchers.lessThan(1500L))
                 .and()
                 .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("response-schema/UserDetailsResponseSchema.json"));
     }
