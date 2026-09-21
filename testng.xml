@@ -5,10 +5,11 @@
 
     <test name="Inwarranty Flow">
         <classes>
-            <class name="com.api.tests.LogInAPITest"/>
-            <class name="com.api.tests.UserDetailsAPITest"/>
-            <class name="com.api.tests.CountAPITest"/>
-            <class name="com.api.tests.MasterAPITest"/>
+            <class name="com.api.tests.LogInAPITestOptimized"/>
+            <class name="com.api.tests.UserDetailsAPITestOptimized"/>
+            <class name="com.api.tests.CountAPITestOptimized"/>
+            <class name="com.api.tests.MasterAPITestOptimized"/>
+            <class name="com.api.tests.CreateJobAPITest"/>
         </classes>
     </test>
 </suite>
