@@ -1,13 +1,13 @@
-package com.demo.csv;
+package com.dataproviders.api.bean;
 
-public class UserPOJO {
+public class UserBean {
     private String username;
     private String password;
 
-    public UserPOJO(){
+    public UserBean(){
     }
 
-    public UserPOJO(String username, String password) {
+    public UserBean(String username, String password) {
         this.username = username;
         this.password = password;
     }
