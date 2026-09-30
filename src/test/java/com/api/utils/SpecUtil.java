@@ -26,13 +26,13 @@ public class SpecUtil {
         return request;
     }
 
-    public static RequestSpecification requestSpec(UserCredentials userCredentials) {
+    public static RequestSpecification requestSpec(Object payload) {
         // To take care of the common request sections (methods)
         RequestSpecification requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(ConfigManager.getProperty("BASE_URI"))
                 .setContentType(ContentType.JSON)
                 .setAccept(ContentType.JSON)
-                .setBody(userCredentials)
+                .setBody(payload)
                 .log(LogDetail.URI)
                 .log(LogDetail.METHOD)
                 .log(LogDetail.HEADERS)
