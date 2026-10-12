@@ -21,7 +21,7 @@ public class CreateJobAPITest {
     public void setup() {
         Customer customer = new Customer("Vishal", "Ingawale", "9665431543", "", "vishal96ingawale@gmail.com", "");
         CustomerAddress customerAddress = new CustomerAddress("F:5", "Moraya Krupa", "Sudarshan Nagar", "Chinchwad", "Pune", "411033", "India", "Maharashtra");
-        CustomerProduct customerProduct = new CustomerProduct("2025-11-24T18:30:00.000Z", "19991432448429", "19991432448429", "19991432448429", "2025-11-24T18:30:00.000Z", 1, 1);
+        CustomerProduct customerProduct = new CustomerProduct("2025-11-24T18:30:00.000Z", "15991432448429", "15991432448429", "15991432448429", "2025-11-24T18:30:00.000Z", 1, 1);
         Problems problems = new Problems(1, "Battery Issue");
         List<Problems> problemList = new ArrayList<Problems>();
         problemList.add(problems);
