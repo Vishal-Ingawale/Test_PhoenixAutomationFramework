@@ -1,4 +1,4 @@
-package com.api.pojo;
+package com.api.model;
 
 public class Customer {
     private String first_name;

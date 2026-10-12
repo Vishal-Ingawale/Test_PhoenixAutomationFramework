@@ -1,7 +1,7 @@
 package com.api.utils;
 
 import com.api.constant.Role;
-import com.api.pojo.UserCredentials;
+import com.api.model.UserCredentials;
 import io.restassured.http.ContentType;
 import org.hamcrest.Matchers;
 

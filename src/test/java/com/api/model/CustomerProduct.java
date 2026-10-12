@@ -1,4 +1,4 @@
-package com.api.pojo;
+package com.api.model;
 
 public class CustomerProduct {
     private String dop;
