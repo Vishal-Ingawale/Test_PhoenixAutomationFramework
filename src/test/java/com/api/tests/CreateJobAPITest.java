@@ -1,13 +1,15 @@
 package com.api.tests;
 
 import com.api.constant.Role;
-import com.api.pojo.*;
+import com.api.model.*;
 import com.api.utils.AuthTokenProvider;
 import com.api.utils.ConfigManager;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -21,9 +23,9 @@ public class CreateJobAPITest {
         CustomerAddress customerAddress = new CustomerAddress("F:5", "Moraya Krupa", "Sudarshan Nagar", "Chinchwad", "Pune", "411033", "India", "Maharashtra");
         CustomerProduct customerProduct = new CustomerProduct("2025-11-24T18:30:00.000Z", "19991432448429", "19991432448429", "19991432448429", "2025-11-24T18:30:00.000Z", 1, 1);
         Problems problems = new Problems(1, "Battery Issue");
-        Problems[] problemsArray = new Problems[1];
-        problemsArray[0] = problems;
-        createJobPayload = new CreateJobPayload(0, 2, 1, 1, customer, customerAddress, customerProduct, problemsArray);
+        List<Problems> problemList = new ArrayList<Problems>();
+        problemList.add(problems);
+        createJobPayload = new CreateJobPayload(0, 2, 1, 1, customer, customerAddress, customerProduct, problemList);
     }
 
     @Test(description = "Verify if the create job api is able to create inwarranty job", groups = {"api", "smoke", "regression"})

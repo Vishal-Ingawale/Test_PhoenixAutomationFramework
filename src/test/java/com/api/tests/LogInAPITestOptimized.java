@@ -1,6 +1,6 @@
 package com.api.tests;
 
-import com.api.pojo.UserCredentials;
+import com.api.model.UserCredentials;
 import com.api.utils.SpecUtil;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import org.hamcrest.Matchers;
