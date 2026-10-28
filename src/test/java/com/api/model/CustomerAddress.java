@@ -10,6 +10,9 @@ public class CustomerAddress {
     private String country;
     private String state;
 
+    public CustomerAddress() {
+    }
+
     public CustomerAddress(String flat_number, String apartment_name, String street_name, String landmark, String area, String pincode, String country, String state) {
         this.flat_number = flat_number;
         this.apartment_name = apartment_name;
