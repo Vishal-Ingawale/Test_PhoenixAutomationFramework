@@ -4,6 +4,9 @@ public class Problems {
     private int id;
     private String remark;
 
+    public Problems() {
+    }
+
     public Problems(int id, String remark) {
         this.id = id;
         this.remark = remark;

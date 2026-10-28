@@ -13,6 +13,9 @@ public class CreateJobPayload {
     private CustomerProduct customer_product;
     private List<Problems> problemsList;
 
+    public CreateJobPayload() {
+    }
+
     public CreateJobPayload(int mst_service_location_id, int mst_platform_id, int mst_warranty_status_id, int mst_oem_id, Customer customer, CustomerAddress customer_address, CustomerProduct customer_product, List<Problems> problemsList) {
         this.mst_service_location_id = mst_service_location_id;
         this.mst_platform_id = mst_platform_id;

@@ -9,6 +9,9 @@ public class CustomerProduct {
     private int product_id;
     private int mst_model_id;
 
+    public CustomerProduct() {
+    }
+
     public CustomerProduct(String dop, String serial_number, String imei1, String imei2, String popurl, int product_id, int mst_model_id) {
         this.dop = dop;
         this.serial_number = serial_number;
