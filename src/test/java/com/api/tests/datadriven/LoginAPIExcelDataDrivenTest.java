@@ -2,6 +2,7 @@ package com.api.tests.datadriven;
 
 import com.api.model.UserCredentials;
 import com.api.utils.SpecUtil;
+import com.dataproviders.api.bean.UserBean;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
@@ -15,10 +16,10 @@ public class LoginAPIExcelDataDrivenTest {
             dataProviderClass = com.dataproviders.DataProviderUtils.class,
             dataProvider = "LoginAPIExcelDataProvider"
             )
-    public void loginAPITest(UserCredentials userCredentials) {
+    public void loginAPITest(UserBean userBean) {
 
         given()
-                .spec(SpecUtil.requestSpec(userCredentials))
+                .spec(SpecUtil.requestSpec(userBean))
                 .when()
                 .post("login")
                 .then()
