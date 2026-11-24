@@ -5,7 +5,6 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseManager {
@@ -22,7 +21,7 @@ public class DatabaseManager {
     }
 
     private static void initializePool() {
-        if (conn == null) { //First check which all the parallel threads will enter
+        if (hikariDataSource == null) { //First check which all the parallel threads will enter
             synchronized (DatabaseManager.class) {
                 HikariConfig hikariConfig = new HikariConfig();
                 hikariConfig.setJdbcUrl(ConfigManager.getProperty("DB_URL"));
