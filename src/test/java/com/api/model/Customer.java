@@ -1,6 +1,7 @@
 package com.api.model;
 
-public class Customer {
+public class Customer
+{
     private String first_name;
     private String last_name;
     private String mobile_number;
